@@ -1,0 +1,29 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #FDF8F0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+input:focus, button:focus {
+  outline: 2px solid #D4A853;
+  outline-offset: 2px;
+}
+
+button {
+  transition: opacity 0.15s, transform 0.15s;
+}
+button:active {
+  transform: scale(0.97);
+}
+button:hover {
+  opacity: 0.9;
+}
