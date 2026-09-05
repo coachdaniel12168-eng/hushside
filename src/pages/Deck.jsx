@@ -18,10 +18,12 @@ export default function Deck() {
   const [tab, setTab] = useState('cards')
   const [filter, setFilter] = useState('all')
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(null)
 
   useEffect(() => {
     Promise.all([fetchCards(), fetchWitnessCards()])
       .then(([cs, ws]) => { setCards(cs); setWitnesses(ws) })
+      .catch((e) => setLoadError(e.message || 'Could not load the deck.'))
       .finally(() => setLoading(false))
   }, [])
 
@@ -79,6 +81,18 @@ export default function Deck() {
         </div>
 
         {loading && <p style={{ textAlign: 'center', color: T.grey400 }}>Loading…</p>}
+
+        {!loading && loadError && (
+          <div style={{
+            background: T.white, borderRadius: 16, padding: '28px 24px', marginBottom: 12,
+            textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+          }}>
+            <div style={{ fontSize: 20, color: T.navy, marginBottom: 8 }}>🤫 Deck loading soon</div>
+            <div style={{ fontSize: 14, color: T.grey600, lineHeight: 1.6 }}>
+              The HushSide deck is still being shuffled — check back in a day or two.
+            </div>
+          </div>
+        )}
 
         {/* Cards */}
         {tab === 'cards' && filteredCards.map(c => (
