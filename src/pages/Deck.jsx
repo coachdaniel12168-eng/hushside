@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { fetchCards, fetchWitnessCards } from '../lib/supabase'
+import JoinList from '../components/JoinList'
 
 const T = {
   navy: '#0A1628', gold: '#D4A853', cream: '#FDF8F0',
@@ -122,6 +123,10 @@ export default function Deck() {
             </div>
           </div>
         ))}
+
+        <div style={{ marginTop: 40 }}>
+          <JoinList variant="deck" />
+        </div>
       </div>
     </div>
   )

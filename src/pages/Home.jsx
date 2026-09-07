@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import JoinList from '../components/JoinList'
 
 const T = {
   navy: '#0A1628', gold: '#D4A853', cream: '#FDF8F0',
@@ -94,6 +95,9 @@ export default function Home() {
               }}>
               Browse the Deck
             </button>
+          </div>
+          <div style={{ marginTop: 56 }}>
+            <JoinList variant="home" />
           </div>
         </div>
       )}
