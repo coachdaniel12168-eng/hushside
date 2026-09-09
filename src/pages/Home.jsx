@@ -96,6 +96,69 @@ export default function Home() {
               Browse the Deck
             </button>
           </div>
+          {/* Pricing */}
+          <div style={{ width: '100%', textAlign: 'center', marginTop: 64 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: T.gold, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 6 }}>
+              Pricing
+            </div>
+            <h2 style={{ fontSize: 26, fontWeight: 400, color: T.navy, margin: '0 0 28px' }}>
+              Free to play. Yours to keep.
+            </h2>
+            <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'stretch' }}>
+              {/* Free tier */}
+              <div style={{
+                background: T.white, borderRadius: 16, padding: '26px 24px', width: 260,
+                textAlign: 'left', boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                display: 'flex', flexDirection: 'column'
+              }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: T.gold, textTransform: 'uppercase', letterSpacing: 1 }}>Free</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: T.navy, margin: '6px 0 2px' }}>Play in your browser</div>
+                <div style={{ fontSize: 13, color: T.grey400, marginBottom: 14 }}>Forever, with anyone, anywhere</div>
+                <ul style={{ fontSize: 14, color: T.grey800, lineHeight: 1.9, paddingLeft: 18, margin: '0 0 18px' }}>
+                  <li>All three levels — warm-up, deeper, truth</li>
+                  <li>36 question cards + 40 witness cards</li>
+                  <li>2 to 8 players, no app to install</li>
+                </ul>
+                <button onClick={() => setStep('names')}
+                  style={{
+                    marginTop: 'auto', padding: '13px 20px', fontSize: 15, fontWeight: 700,
+                    background: T.cream, color: T.navy, border: `1.5px solid ${T.grey200}`,
+                    borderRadius: 40, cursor: 'pointer', fontFamily: 'inherit'
+                  }}>
+                  Start Playing
+                </button>
+              </div>
+              {/* Deck tier */}
+              <div style={{
+                background: T.white, borderRadius: 16, padding: '26px 24px', width: 260,
+                textAlign: 'left', boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                display: 'flex', flexDirection: 'column',
+                borderTop: `3px solid ${T.gold}`
+              }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: T.gold, textTransform: 'uppercase', letterSpacing: 1 }}>The Complete Deck</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: T.navy, margin: '6px 0 2px' }}>
+                  S$18 <span style={{ fontSize: 13, fontWeight: 400, color: T.grey600 }}>one-time</span>
+                </div>
+                <div style={{ fontSize: 13, color: T.grey400, marginBottom: 14 }}>The whole game, yours to keep</div>
+                <ul style={{ fontSize: 14, color: T.grey800, lineHeight: 1.9, paddingLeft: 18, margin: '0 0 18px' }}>
+                  <li>All 76 cards as a print-ready PDF</li>
+                  <li>Beautiful at-home printing, A4</li>
+                  <li>Every future HushSide card pack, free</li>
+                </ul>
+                <a href="https://pay.airwallex.com/sghm48m0l2ss" target="_blank" rel="noopener noreferrer"
+                  style={{
+                    marginTop: 'auto', padding: '13px 20px', fontSize: 15, fontWeight: 700,
+                    background: T.navy, color: T.white, border: 'none', textDecoration: 'none',
+                    borderRadius: 40, cursor: 'pointer', fontFamily: 'inherit', textAlign: 'center', display: 'block'
+                  }}>
+                  Get the Deck
+                </a>
+              </div>
+            </div>
+            <p style={{ fontSize: 12, color: T.grey400, marginTop: 18, fontStyle: 'italic' }}>
+              Every deck sold keeps HushSide free for everyone.
+            </p>
+          </div>
           <div style={{ marginTop: 56 }}>
             <JoinList variant="home" />
           </div>
